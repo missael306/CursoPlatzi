@@ -1,32 +1,36 @@
 =begin
-    Arithmetic operators
-   Thi´s the classic calcutor of integer numbers
-   NOTE: Ruby has Operations hierarchy, you must use parenthesis
-   for sure that operations are correct
+    Working with Srings 
 =end
 
-class Calculator 
-    def additon(num1, num2)
-        puts "La suma de #{num1} + #{num2} es: #{num1 + num2}"
+class Strings 
+    def strings()
+        language= "RUBY"
+        puts "Interpolacion de variables en #{language} "
+        puts "Concatenacion de variables en "<<language
+        puts "Multipliacacion de cadenas en Ruby " *2
+        puts "El metodo capitalize transforma missael en #{"missael".capitalize}"
+        #the paramter |c| does references each character
+        puts "Separando una cadena "
+        puts "Separar".each_char{|c| print c.concat("-")}
+
     end
-    def subtracction(num1, num2)
-        puts "La resta de #{num1} - #{num2} es: #{num1 - num2}"
+    def copmareString(cadenaUno, cadenaDos)
+        #if the strings are equal in the length and the word te result is 0
+        #if the first is bigger than the second the result is 1 or true 
+        #if the second is bigger than the firs the result is -1
+        res = cadenaUno.casecmp(cadenaDos)
+        if res == 0
+            puts "Las cadenas son exactamente igual"
+        elsif res == 1
+            puts "#{cadenaUno} es mas grande que #{cadenaDos}"
+        else 
+            puts "#{cadenaDos} es mas grande que #{cadenaUno}"
+        end
     end
-    def multiplication(num1, num2)
-        puts "La multiplicacion de #{num1} X #{num2} es: #{num1 * num2}"
-    end 
-    def division(num1, num2)
-        puts "La división de #{num1} / #{num2} es: #{num1 / num2}"
-    end 
-    def square(num1, num2)
-        puts "#{num1} elevado a la potencia #{num2} es :#{num1**num2} "
-    end 
+
 end
 
-calc = Calculator.new()
-calc.additon(5 , 10)
-calc.subtracction(50,28)
-calc.multiplication(5,3)
-calc.division(50,10)
-calc.square(5,3)
+string = Strings.new()
+string.strings()
+string.copmareString("hhhs","hhhss")
 gets()
