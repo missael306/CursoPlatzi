@@ -1,45 +1,32 @@
 =begin
-    Variable's scope
-    In ruby the scope of the variables is defindeb by 
-    $variableName - Global variable
-    @variableName - Instance variable
-    varianleName - Local variable
+    Arithmetic operators
+   Thi´s the classic calcutor of integer numbers
+   NOTE: Ruby has Operations hierarchy, you must use parenthesis
+   for sure that operations are correct
 =end
 
-$saludoGlobal = "Hola desde el scope global"
-
-class Laboratory
-    def initialize()
-        #this is the construct of the class 
-        @saludoInstancia = "Hola desde el scope de la clase"
+class Calculator 
+    def additon(num1, num2)
+        puts "La suma de #{num1} + #{num2} es: #{num1 + num2}"
     end
-    def saluda(nombre)
-        puts "Buend día #{nombre}" # The symbol #{} is used to evalueted an expression 
+    def subtracction(num1, num2)
+        puts "La resta de #{num1} - #{num2} es: #{num1 - num2}"
     end
-    def suma(num1,num2)
-        #clasic addition of two numbers
-        resultado = num1 + num2 
-        puts resultado 
-    end
-    def parseInt(numeroString)
-        #parging strint to integer
-        resultado = numeroString.to_i + 5
-        puts "Se parseo el número #{numeroString}"
-        puts "Si al número parseado se le suman 5 el resultado es: #{resultado}"
-    end
-    def parseString(numero)
-        #parsing integer to String
-        cadena = numero.to_s
-        puts "Ahora el numero #{cadena} se comporta como cadena"
-    end
-    def scopeVariable()
-        saludaLocal = "Hola desde el metodo scopeVariable"
-        puts $saludoGlobal
-        puts @saludoInstancia
-        puts saludaLocal
-    end
+    def multiplication(num1, num2)
+        puts "La multiplicacion de #{num1} X #{num2} es: #{num1 * num2}"
+    end 
+    def division(num1, num2)
+        puts "La división de #{num1} / #{num2} es: #{num1 / num2}"
+    end 
+    def square(num1, num2)
+        puts "#{num1} elevado a la potencia #{num2} es :#{num1**num2} "
+    end 
 end
 
-object = Laboratory.new()
-object.scopeVariable()
-gets() #this stop the flow 
+calc = Calculator.new()
+calc.additon(5 , 10)
+calc.subtracction(50,28)
+calc.multiplication(5,3)
+calc.division(50,10)
+calc.square(5,3)
+gets()
