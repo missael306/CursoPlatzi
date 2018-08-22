@@ -1,19 +1,23 @@
 =begin
-    Conditional unless 
-    this used in specific cases where you want to do something
+    Case
+    Case allow the use of ranges  in numbers, string or mixed values
 =end
 
 class Strings 
-    def acceso(nombre)
-        unless nombre == "Pedro"
-            #unless the name its pedro this works
-            puts "Bienvenido #{nombre}"
+    def case(variable)
+        respuesta = case variable
+        when "hola", "munod" then "Se envio una cadena"
+        when 5 then "Se envio el numero #{variable}"
+        when 10..15 then "Se envio un numero entre 10 y 15"
+        else "Eroro en la variable"
         end
+        puts respuesta
     end
 
 end
 
 string = Strings.new()
-string.acceso("Luis")
-string.acceso("Pedro")
+string.case("hola")
+string.case(12)
+string.case(5)
 gets()
