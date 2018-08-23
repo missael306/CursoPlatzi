@@ -1,23 +1,35 @@
 =begin
-    Case
-    Case allow the use of ranges  in numbers, string or mixed values
+    FOR
+    the bucle for allow the isntruction break and next
 =end
 
-class Strings 
-    def case(variable)
+class Objeto 
+    def for(variable, fin, value)
+
         respuesta = case variable
-        when "hola", "munod" then "Se envio una cadena"
-        when 5 then "Se envio el numero #{variable}"
-        when 10..15 then "Se envio un numero entre 10 y 15"
-        else "Eroro en la variable"
+            when "break"
+                then
+                for i in (0..fin)
+                    if(i == value)
+                        puts "El ciclo se rompio en i = #{i}"
+                        break
+                    end
+                    puts "El ciclo esta en #{i}"
+                end
+            when "next"
+                then
+                for i in (0..fin)
+                    if( i == value)
+                        puts "Salto de una posicion"
+                        next
+                    end
+                    puts "El ciclo esta en #{i}"
+                end
         end
-        puts respuesta
     end
 
 end
 
-string = Strings.new()
-string.case("hola")
-string.case(12)
-string.case(5)
+Object = Objeto.new()
+Object.for("next", 5, 3)
 gets()
