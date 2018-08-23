@@ -1,35 +1,29 @@
 =begin
-    FOR
-    the bucle for allow the isntruction break and next
+    Bucles each , times, upto, dowto
+    each list an interval of values
+    times repeat the times of tou set
+    upto start in the value that yuo specific and up still a value
+    dowto start in the value that you specifiv and down still value
 =end
 
 class Objeto 
-    def for(variable, fin, value)
-
-        respuesta = case variable
-            when "break"
-                then
-                for i in (0..fin)
-                    if(i == value)
-                        puts "El ciclo se rompio en i = #{i}"
-                        break
-                    end
-                    puts "El ciclo esta en #{i}"
-                end
-            when "next"
-                then
-                for i in (0..fin)
-                    if( i == value)
-                        puts "Salto de una posicion"
-                        next
-                    end
-                    puts "El ciclo esta en #{i}"
-                end
-        end
+    def ciclos()
+        puts "Ciclo each"
+        (0..5).each {|i| print "#{i} -" }
+        print "\n"
+        puts "Ciclo times"
+        10.times {|i| print "#{i} -"}
+        print "\n"
+        puts "Ciclo Upto"
+        10.upto(15) {| i | print "#{i} -"}
+        print "\n"
+        puts "Ciclo Downto"
+        10.downto(5) {|i| print "#{i} -"}
+        print "\n"
     end
 
 end
 
 Object = Objeto.new()
-Object.for("next", 5, 3)
+Object.ciclos()
 gets()
